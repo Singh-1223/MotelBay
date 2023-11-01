@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate') %>
+
+   <div class="row">
+      <h1 class="text-center">New Motel</h1>
+      <div class="col-md-6 offset-md-3">
+        
+
+        <form action="/motels" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" name="motel[title]" id="title" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" name="motel[location]" id="location" required>
+            </div>
+            
+        
+
+            <!-- <input type="file" name="image" id="" multiple> -->
+            <!-- <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" name="motel[image]" id="image" required>
+            </div> -->
+
+            <div class="mb-3">
+                <label class="form-label" for="Price">Motel Price</label>
+                 <div class="input-group">
+                    <span class="input-group-text" id="price-label">Rs.</span>
+                      <input type="text" class="form-control" name="motel[price]" id="price" priceholder="0" aria-label="price" 
+                          aria-describedby="price-label" required>
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" name="motel[description]" id="description" required></textarea>
+            </div>
+             
+          
+            <div class="mb-3">
+                <div class="form-file custom-file">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                        <label class="input-group-text" for="image">Upload</label>
+                      </div>
+        
+                </div>
+            </div>
+
+            <div class="mb-3">
+                  <button class="btn btn-success">Add Motel</button>
+             </div>
+        </form>
+        <a href="/motels">All MOTELS</a>
+      </div>
+   </div>
+    
+
+ 
