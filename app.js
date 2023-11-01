@@ -20,21 +20,19 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users')
 const motelsRoutes= require('./routes/motels');
 const reviewsRoutes = require('./routes/reviews')
-const dbUrl = process.env.DB_URL;
-console.log(dbUrl);
+const mongodbUrl = process.env.DB_URL;
+
 main().catch(err => console.log(err));
 
-const url = "mongodb+srv://teerpevol1223:<Y70ys56PRu5nKfIU>@mycluster.e7kfaz3.mongodb.net/?retryWrites=true&w=majority";
 
-// mongodb://127.0.0.1:27017/motel-bay
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/motel-bay', {
+    await mongoose.connect(mongodbUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         serverSelectionTimeoutMS: 30000 // Set a longer timeout value
     })
     console.log("connected ")
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+
 }
 
 

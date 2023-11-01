@@ -2,18 +2,22 @@ const mongoose= require('mongoose');
 const Motel =require('../models/motel');
 const cities = require('./cities');
 const {places,descriptors}=require('./seedHelpers');
+const mongodbUrl = process.env.DB_URL;
 
 main().catch(err => console.log(err));
 
+
 async function main() {
-   await mongoose.connect('mongodb://127.0.0.1:27017/motel-bay', {
+    await mongoose.connect(mongodbUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         serverSelectionTimeoutMS: 30000 // Set a longer timeout value
     })
     console.log("connected ")
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+
 }
+
+
 
 const sample = array => array[Math.floor(Math.random() * array.length)];
 
